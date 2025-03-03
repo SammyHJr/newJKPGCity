@@ -1,0 +1,19 @@
+<h1>Stores in Jönköping</h1>
+
+<a href="/" class="btn">Back to Home</a>
+
+<div class="store-list">
+    {{#each stores}}
+    <div class="store">
+        <h2>{{name}}</h2>
+        {{#if url}}
+            <p><a href="https://{{url}}" target="_blank">Visit Website</a></p>
+        {{else}}
+            <p>No website available</p>
+        {{/if}}
+        {{#if district}}
+            <p>District: {{district}}</p>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
