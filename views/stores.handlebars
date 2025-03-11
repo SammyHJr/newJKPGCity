@@ -1,19 +1,43 @@
-<h1>Stores in Jönköping</h1>
+<h1 class="page-title">{{title}}</h1>
 
-<a href="/" class="btn">Back to Home</a>
-
-<div class="store-list">
-    {{#each stores}}
-    <div class="store">
-        <h2>{{name}}</h2>
-        {{#if url}}
-            <p><a href="https://{{url}}" target="_blank">Visit Website</a></p>
-        {{else}}
-            <p>No website available</p>
-        {{/if}}
-        {{#if district}}
-            <p>District: {{district}}</p>
-        {{/if}}
-    </div>
-    {{/each}}
+<!-- Stores Container -->
+<div id="store-list" class="store-list">
+    <p class="loading-message">Loading stores...</p>
 </div>
+
+<!-- API Link -->
+<div class="api-link">
+    <p>Want to access the raw store data? 
+        <a href="/api/stores" target="_blank" class="btn">View API Data</a>
+    </p>
+</div>
+
+<script>
+    async function fetchStores() {
+        try {
+            const response = await fetch('/api/stores');
+            const stores = await response.json();
+            const storeList = document.getElementById('store-list');
+
+            // Clear loading message
+            storeList.innerHTML = '';
+
+            // Add each store with correct CSS classes
+            stores.forEach(store => {
+                const storeElement = document.createElement("div");
+                storeElement.classList.add("store");
+
+                storeElement.innerHTML = `
+                    <h2 class="store-title">${store.name}</h2>
+                    ${store.url ? `<p><a href="https://${store.url}" target="_blank" class="store-link">Visit Website</a></p>` : `<p class="no-website">No website available</p>`}
+                    ${store.district ? `<p class="store-district">District: ${store.district}</p>` : ''}
+                `;
+                storeList.appendChild(storeElement);
+            });
+        } catch (error) {
+            console.error("❌ Failed to load stores:", error);
+            document.getElementById('store-list').innerHTML = `<p class="error-message">Error loading stores.</p>`;
+        }
+    }
+    fetchStores(); // Fetch stores when the page loads
+</script>

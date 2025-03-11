@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    {{ header}}  <!-- Include the header partial -->
+    {{> header}}  <!-- Include the header partial -->
 
     <main class="container">
         {{{body}}}  <!-- This will be replaced by the view content -->
     </main>
 
-    {{ footer}}  <!-- Include the footer partial -->
+    {{> footer}}  <!-- Include the footer partial -->
 
 </body>
 </html>

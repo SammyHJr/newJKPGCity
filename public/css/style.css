@@ -20,3 +20,70 @@ body {
     width: 250px;
     text-align: left;
 }
+
+/* Button Styling */
+.btn {
+    background-color: white;   /* White background */
+    color: black;              /* Black text */
+    border: 2px solid orange;  /* Orange outline */
+    padding: 10px 20px;        /* Padding for better button shape */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; /* Optional: Makes text all caps */
+    text-decoration: none;     /* Removes underline */
+    display: inline-block;     /* Ensures proper button spacing */
+    cursor: pointer;           /* Pointer cursor on hover */
+    border-radius: 5px;        /* Smooth corners */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background-color: orange;  /* Orange background on hover */
+    color: white;              /* White text on hover */
+    border-color: black;       /* Changes outline to black */
+}
+
+.headerPicture {
+    width: 100%;
+    height: 400px;
+}
+
+.headerContainer{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Home Content Styling */
+.homeContent {
+    max-width: 800px;       /* Restrict width for better readability */
+    margin: 50px auto;      /* Center align with top/bottom spacing */
+    padding: 20px;
+    background: #f9f9f9;    /* Light background to stand out */
+    border-left: 5px solid orange; /* Orange accent on the left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 8px;     /* Rounded corners */
+}
+
+/* Styling for the paragraphs inside homeContent */
+.homeContent p {
+    font-size: 18px;        /* Increase font size for readability */
+    line-height: 1.6;       /* Better line spacing */
+    color: #333;            /* Dark gray for modern feel */
+    font-weight: 400;       /* Normal weight for readability */
+    text-align: center;     /* Center text */
+    margin-bottom: 15px;    /* Spacing between paragraphs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homeContent {
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .homeContent p {
+        font-size: 16px;
+    }
+}
