@@ -4,22 +4,64 @@ body {
     text-align: center;
 }
 
+/* Store List Container */
 .store-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Individual Store Card */
 .store {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
     text-align: left;
+    transition: transform 0.2s ease-in-out;
 }
+
+.store:hover {
+    transform: translateY(-5px);
+}
+
+/* Store Name */
+.store h2 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Store Website Link */
+.store a {
+    display: inline-block;
+    text-decoration: none;
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.store a:hover {
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Store District */
+.store p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 8px;
+}
+
 
 /* Button Styling */
 .btn {
